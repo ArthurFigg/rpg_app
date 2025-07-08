@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de {{ ficha.nome }}</title>
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            padding: 40px;
+        }
+
+        .ficha-container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #2e2e3f;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px black;
+        }
+
+        h1, h2 {
+            color: #ffd700;
+        }
+
+        .topo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .topo div {
+            flex: 1 1 200px;
+            margin: 5px;
+        }
+
+        .atributos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .atributo {
+            background: #444;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .atributo h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .atributo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .extra-info, .magias, .itens, .proficiencia {
+            margin-top: 30px;
+            background: #3a3a4f;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .label {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            color: #ffd700;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            border-bottom: 1px solid #ffd700;
+            padding-bottom: 5px;
+        }
+
+        .info-box {
+            background-color: #4b4b5f;
+            padding: 10px;
+            border-radius: 5px;
+            min-height: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ficha-container">
+        <h1>Ficha de Personagem</h1>
+
+        <div class="topo">
+            <div>
+                <div class="label">Nome</div>
+                <strong>{{ ficha.nome }}</strong>
+            </div>
+            <div>
+                <div class="label">Raça</div>
+                <strong>{{ ficha.raca }}</strong>
+            </div>
+            <div>
+                <div class="label">Classe</div>
+                <strong>{{ ficha.classe }}{% if ficha.subclasse %} - {{ ficha.subclasse }}{% endif %}</strong>
+            </div>
+            <div>
+                <div class="label">Nível</div>
+                <strong>{{ ficha.nivel }}</strong>
+            </div>
+        </div>
+
+        <div class="atributos">
+            <div class="atributo">
+                <h3>Força</h3>
+                <span>{{ ficha.forca }}</span>
+            </div>
+            <div class="atributo">
+                <h3>Destreza</h3>
+                <span>{{ ficha.destreza }}</span>
+            </div>
+            <div class="atributo">
+                <h3>Constituição</h3>
+                <span>{{ ficha.constituicao }}</span>
+            </div>
+            <div class="atributo">
+                <h3>Inteligência</h3>
+                <span>{{ ficha.inteligencia }}</span>
+            </div>
+            <div class="atributo">
+                <h3>Sabedoria</h3>
+                <span>{{ ficha.sabedoria }}</span>
+            </div>
+            <div class="atributo">
+                <h3>Carisma</h3>
+                <span>{{ ficha.carisma }}</span>
+            </div>
+        </div>
+
+        <div class="extra-info">
+            <div class="label">Pontos de Vida</div>
+            <strong>{{ ficha.pontos_de_vida }}</strong>
+        </div>
+
+        <div class="proficiencia">
+            <div class="section-title">Bônus de Proficiência</div>
+            <div class="info-box">
+                +{{ ficha.proficiencia }}
+            </div>
+        </div>
+
+        <div class="magias">
+            <div class="section-title">Magias</div>
+            <div class="info-box">
+                (Magias ainda não vinculadas)
+            </div>
+        </div>
+
+        <div class="itens">
+            <div class="section-title">Itens</div>
+            <div class="info-box">
+                (Itens ainda não vinculados)
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

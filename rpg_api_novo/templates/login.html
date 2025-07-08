@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | RPG D&D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e2f;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        form {
+            background: #2e2e3f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #444;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ffd700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e6c200;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Entrar no Mundo RPG</h1>
+
+    <form action="/login" method="POST">
+        <label for="nome">Nome de Usuário:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p>Não tem conta? <a href="/cadastro">Crie uma aqui</a></p>
+
+</body>
+</html>

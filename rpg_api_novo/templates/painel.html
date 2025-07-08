@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Jogador | RPG D&D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e2f;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            background: #2e2e3f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+        }
+
+        .menu a {
+            background: #ffd700;
+            color: #000;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .menu a:hover {
+            background: #e6c200;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Painel do Jogador</h1>
+
+    <div class="menu">
+        <a href="/criar-ficha">Criar nova ficha</a>
+        <a href="/minhas-fichas">Ver minhas fichas</a>
+        <a href="/magias">Consultar magias</a>
+        <a href="/itens">Consultar itens</a>
+        <a href="/habilidades">Ver habilidades de classe</a>
+        <a href="/logout">Sair</a>
+    </div>
+
+</body>
+</html>

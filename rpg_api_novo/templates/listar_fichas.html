@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Fichas</title>
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .ficha-lista {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .ficha-item {
+            background: #2e2e3f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .ficha-item:hover {
+            background: #3a3a4f;
+        }
+
+        .ficha-info {
+            flex-grow: 1;
+        }
+
+        .ficha-info h2 {
+            margin: 0;
+            color: #ffd700;
+        }
+
+        .ficha-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .btn-ver {
+            padding: 8px 14px;
+            background-color: #ffd700;
+            color: #1e1e2f;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-ver:hover {
+            background-color: #e5c100;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minhas Fichas</h1>
+
+    <div class="ficha-lista">
+        {% for ficha in fichas %}
+        <div class="ficha-item">
+            <div class="ficha-info">
+                <h2>{{ ficha.nome }}</h2>
+                <p>Classe: {{ ficha.classe }}{% if ficha.subclasse %} - {{ ficha.subclasse }}{% endif %}</p>
+                <p>Raça: {{ ficha.raca }} | Nível: {{ ficha.nivel }}</p>
+            </div>
+            <a href="/fichas/{{ ficha.id }}" class="btn-ver">Ver Ficha</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
